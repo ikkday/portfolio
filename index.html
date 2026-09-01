@@ -81,7 +81,7 @@
     <main id="main">
       <section id="stage">
         <div class="main_stage">CONCEPT ON STAGE</div>
-        <div class="main_stage2">:무드와 장면을 담아낸 작업 기록</div>
+        <div class="main_stage2">:한 장면을 만드는 여러 조각들</div>
         <img src="assets/img/main_1.png" class="stage_img" />
         <h1 class="spotlight_text">SPOTLIGHT</h1>
         <div class="portfolio_wrap">
@@ -351,46 +351,39 @@
       <img src="assets/img/top_btn.png" alt="" />
     </button>
     <!-- //main -->
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
+    
     <!-- scrolltrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+      <script src="assets/main.js"></script>
     <script>
       const menuLinks = document.querySelectorAll("#header a, #mNav a");
-
+      
       menuLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
-
+          
           const targetId = link.getAttribute("href");
-
+          
           const target = document.querySelector(targetId);
-
+          
           window.scrollTo({
             top: target.offsetTop,
             behavior: "smooth",
           });
         });
       });
-
-      // 모바일 메뉴
-      const button = document.querySelector("#mNav i");
-      const nav = document.querySelector("#mNav ul");
-
-      button.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-
+      
+      
       // stage 스크롤 다운
       if (document.querySelector("#stage")) {
         const stageImg = document.querySelector(".stage_img");
         const spotlightText = document.querySelector(".spotlight_text");
         const portfolio = document.querySelector(".portfolio_wrap");
         const name = document.querySelector(".name_wrap");
-
+        
         const images = [
           "assets/img/main_2.png",
           "assets/img/main_3.png",
@@ -398,14 +391,14 @@
           "assets/img/main_5.png",
           "assets/img/main_6.png",
         ];
-
+        
         window.addEventListener("scroll", () => {
           const scrollY = window.scrollY;
           const mainStage = document.querySelector(".main_stage");
           const mainStage2 = document.querySelector(".main_stage2");
-
+          
           /* main_stage */
-
+          
           if (scrollY > 100) {
             mainStage.classList.add("hide");
             mainStage2.classList.add("hide");
@@ -413,33 +406,33 @@
             mainStage.classList.remove("hide");
             mainStage2.classList.remove("hide");
           }
-
+          
           const header = document.querySelector("#header");
-
+          
           /* header */
-
+          
           if (scrollY > 2600) {
             header.classList.add("show");
           } else {
             header.classList.remove("show");
           }
-
+          
           let index = Math.floor(scrollY / 300);
-
+          
           if (index >= images.length) {
             index = images.length - 1;
           }
-
+          
           stageImg.src = images[index];
-
+          
           /* text */
-
+          
           if (scrollY > 1278 && scrollY < 2500) {
             spotlightText.classList.add("show");
           } else {
             spotlightText.classList.remove("show");
           }
-
+          
           if (scrollY > 1350 && scrollY < 2500) {
             portfolio.classList.add("active");
             name.classList.add("active");
@@ -453,7 +446,7 @@
       if (document.querySelector(".scroll-down")) {
         window.addEventListener("scroll", () => {
           const scrollDown = document.querySelector(".scroll-down");
-
+          
           if (window.scrollY > window.innerHeight * 0.9) {
             scrollDown.style.opacity = "0";
           } else {
@@ -465,88 +458,88 @@
       const content = document.querySelector(".icon-cards__content");
       const next = document.querySelector(".next");
       const prev = document.querySelector(".prev");
-
+      
       let angle = 0;
-
+      
       function rotateCarousel() {
         content.style.transform = `translate(-50%, -50%) rotateY(${angle}deg)`;
       }
-
+      
       /* 다음 */
-
+      
       next.addEventListener("click", () => {
         angle -= 72;
         rotateCarousel();
       });
-
+      
       /* 이전 */
-
+      
       prev.addEventListener("click", () => {
         angle += 72;
         rotateCarousel();
       });
-
+      
       /* 자동 회전 */
-
+      
       setInterval(() => {
         angle -= 72;
         rotateCarousel();
       }, 5000);
-
+      
       gsap.registerPlugin(ScrollTrigger);
-
+      
       // about_m
       const slides = document.querySelectorAll(".swiper-slide-m");
       const nextBtn = document.querySelector(".m-next");
       const prevBtn = document.querySelector(".m-prev");
-
+      
       let current = 0;
-
+      
       /* 첫 카드 */
-
+      
       slides[current].classList.add("active");
-
+      
       /* 보여주기 */
-
+      
       function showSlide(index) {
         slides.forEach((slide) => {
           slide.classList.remove("active");
         });
-
+        
         slides[index].classList.add("active");
       }
-
+      
       /* 다음 */
-
+      
       function nextSlide() {
         current++;
-
+        
         if (current >= slides.length) {
           current = 0;
         }
-
+        
         showSlide(current);
       }
-
+      
       /* 이전 */
-
+      
       function prevSlide() {
         current--;
-
+        
         if (current < 0) {
           current = slides.length - 1;
         }
-
+        
         showSlide(current);
       }
-
+      
       /* 버튼 */
-
+      
       nextBtn.addEventListener("click", nextSlide);
       prevBtn.addEventListener("click", prevSlide);
-
+      
       /* 자동 슬라이드 */
-
+      
       setInterval(() => {
         nextSlide();
       }, 5000);
@@ -556,27 +549,27 @@
           trigger: "#profile",
           start: "top 70%",
         },
-
+        
         y: 100,
         opacity: 0,
-
+        
         duration: 1.2,
         ease: "power3.out",
       });
-
+      
       /* 아래 내용 */
       gsap.from(".profile_inner ul", {
         scrollTrigger: {
           trigger: "#profile",
           start: "top 65%",
         },
-
+        
         y: 100,
         opacity: 0,
-
+        
         duration: 1.2,
         delay: 0.4,
-
+        
         ease: "power3.out",
       });
       gsap.from(".works_inner ul li", {
@@ -584,20 +577,20 @@
           trigger: "#works",
           start: "top 70%",
         },
-
+        
         y: 120,
         opacity: 0,
-
+        
         duration: 1.2,
-
+        
         stagger: 0.2,
-
+        
         ease: "power3.out",
       });
       // contact
       const box1 = document.querySelector("#contact .contact_dot1");
       const box2 = document.querySelector("#contact .contact_dot2");
-
+      
       gsap.fromTo(
         box1,
         {
@@ -609,9 +602,9 @@
           xPercent: 100,
           scale: 1,
           opacity: 1,
-
+          
           ease: "none",
-
+          
           scrollTrigger: {
             trigger: "#contact",
             start: "top 70%",
@@ -620,7 +613,7 @@
           },
         },
       );
-
+      
       gsap.fromTo(
         box2,
         {
@@ -632,9 +625,9 @@
           xPercent: -100,
           scale: 1,
           opacity: 1,
-
+          
           ease: "none",
-
+          
           scrollTrigger: {
             trigger: "#contact",
             start: "top 70%",
@@ -653,7 +646,7 @@
           topBtn.style.display = "none";
         }
       });
-
+      
       // 클릭 시 맨 위로 이동 (부드럽게)
       topBtn.onclick = function () {
         window.scrollTo({
@@ -661,6 +654,7 @@
           behavior: "smooth",
         });
       };
-    </script>
+      </script>
   </body>
-</html>
+  </html>
+  

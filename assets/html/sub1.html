@@ -498,9 +498,9 @@
       // 스크롤 이펙트
       gsap.registerPlugin(ScrollTrigger);
 
-      const sections = document.querySelectorAll(".sub_coreWork");
+      const CoreSections = document.querySelectorAll(".sub_coreWork");
 
-      sections.forEach((section) => {
+      CoreSections.forEach((section) => {
         gsap.to(section, {
           y: 0,
           opacity: 1,

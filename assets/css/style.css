@@ -312,9 +312,11 @@ body.main #header.show {
   font-weight: 300;
   transition: all 0.3s;
 }
-.lnb ul li a:hover {
-  color: #fff;
+.lnb ul li a:hover, .lnb ul li a.active {
+  color: #e9dfd1;
+  filter: drop-shadow(0 0 6px rgba(255, 175, 63, 0.8));
 }
+
 
 /* stage */
 #stage {

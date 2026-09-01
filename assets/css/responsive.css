@@ -140,18 +140,22 @@
     height: 70vh;
   }
 }
-@media (max-width: 876px) {
+/* @media (max-width: 876px) {
   #about {
     height: 55vh;
   }
-}
-@media (max-width: 768px) {
+} */
+@media (max-width: 1085px) {
   #about {
     display: none;
   }
   #about_m {
     display: flex;
   }
+  .about_m img {
+    width: 55%;
+  }
+}
   @media (max-width: 480px) {
     #about_m .contain {
       width: 43%;
@@ -161,8 +165,9 @@
     .swiper-slide-m {
       padding: 5px 5px;
     }
+
   }
-}
+
 /* profile */
 @media (max-width: 960px) {
   .profile_inner {
@@ -517,6 +522,15 @@
   }
 }
 /* SUB3 */
+@media (max-width: 1470px) {
+  #W_TeamProject .container .work2_left {width: 70%;}
+
+}
+@media (max-width: 1060px) {
+  #W_TeamProject .container .work2_left {width: 100%;}
+  .work2_left {width: 70%;}
+
+}
 @media (max-width: 830px) {
   #W_TeamProject .container {
     flex-direction: column-reverse;
@@ -526,6 +540,9 @@
   #W_rebuild1 .container,
   #W_rebuild2 .container {
     flex-direction: column;
+  }
+  #W_TeamProject .container .work2_left {
+    width: 100%;
   }
   #W_TeamProject .work2_right,
   #W_design .work2_right,
