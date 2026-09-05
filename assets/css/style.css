@@ -1647,6 +1647,7 @@ img.omadeng_img {
 /* sub3 */
 #W_TeamProject,
 #W_TeamProject2,
+#w_surf,
 #W_design,
 #W_rebuild1,
 #W_rebuild2 {
@@ -1658,6 +1659,7 @@ img.omadeng_img {
 }
 #W_TeamProject .container,
 #W_TeamProject2 .container,
+#w_surf .container,
 #W_design .container,
 #W_rebuild1 .container,
 #W_rebuild2 .container {
@@ -1679,7 +1681,7 @@ img.omadeng_img {
 #W_TeamProject2 .work2_title p {
   font-size: 17px;
 }
-#W_TeamProject .container .work2_left .link {
+#W_TeamProject .container .work2_left .link, #w_surf .container .work2_left .link {
   display: none;
 }
 .nfnl_img {
@@ -1768,6 +1770,7 @@ img.omadeng_img {
   width: 90%;
 }
 #W_TeamProject .work2_right,
+#w_surf .work2_right,
 #W_design .work2_right,
 #W_rebuild1 .work2_right,
 #W_rebuild2 .work2_right {
@@ -1775,6 +1778,7 @@ img.omadeng_img {
   align-items: center;
 }
 #W_TeamProject .work2_right img,
+#w_surf .work2_rifht img,
 #W_rebuild1 .work2_right img,
 #W_rebuild2 .work2_right img {
   width: 85%;

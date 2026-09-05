@@ -523,16 +523,16 @@
 }
 /* SUB3 */
 @media (max-width: 1470px) {
-  #W_TeamProject .container .work2_left {width: 70%;}
+  #W_TeamProject .container .work2_left, #w_surf .container .work2_left {width: 70%;}
 
 }
 @media (max-width: 1060px) {
-  #W_TeamProject .container .work2_left {width: 100%;}
+  #W_TeamProject .container .work2_left, #w_surf .container .work2_left {width: 100%;}
   .work2_left {width: 70%;}
 
 }
 @media (max-width: 830px) {
-  #W_TeamProject .container {
+  #W_TeamProject .container, #w_surf .container {
     flex-direction: column-reverse;
   }
   #W_TeamProject2 .container,
@@ -541,10 +541,11 @@
   #W_rebuild2 .container {
     flex-direction: column;
   }
-  #W_TeamProject .container .work2_left {
+  #W_TeamProject .container .work2_left, #w_surf .container .work2_left {
     width: 100%;
   }
   #W_TeamProject .work2_right,
+  #w_surf .work2_right,
   #W_design .work2_right,
   #W_rebuild1 .work2_right,
   #W_rebuild2 .work2_right {
@@ -553,7 +554,7 @@
   .work2_wrap .link {
     display: none;
   }
-  #W_TeamProject .container .work2_left .link {
+  #W_TeamProject .container .work2_left .link, #w_surf .container .work2_left .link {
     display: block;
   }
   .nfnl_info,
