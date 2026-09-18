@@ -15,9 +15,18 @@
     />
     <link rel="stylesheet" href="assets/css/font.css" />
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-    <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/fb27592f06.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
@@ -133,9 +142,9 @@
               <div class="icon-cards__item about">
                 <div class="card_title">ABOUT</div>
                 <div class="card_desc about_desc">
-                  무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
+                  <!-- 무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
                   기존 마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게
-                  오래 기억될 무대를 만들고싶습니다.
+                  오래 기억될 무대를 만들고싶습니다. -->
                 </div>
               </div>
               <div class="icon-cards__item education">
@@ -206,9 +215,10 @@
             <div class="swiper-slide-m">
               <div class="card_title">ABOUT</div>
               <div class="card_desc about_desc">
-                무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다. 기존
-                마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게 오래
-                기억될 무대를 만들고싶습니다.
+                무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을
+                직접 만들어내는 사람이 되고자 합니다. 기존 마케팅 실무 경험을
+                바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더
+                많은 사람들에게 오래 기억될 무대를 만들고싶습니다.
               </div>
             </div>
             <div class="swiper-slide-m">
@@ -354,36 +364,35 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    
+
     <!-- scrolltrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-      <script src="assets/main.js"></script>
+    <script src="assets/main.js"></script>
     <script>
       const menuLinks = document.querySelectorAll("#header a, #mNav a");
-      
+
       menuLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
-          
+
           const targetId = link.getAttribute("href");
-          
+
           const target = document.querySelector(targetId);
-          
+
           window.scrollTo({
             top: target.offsetTop,
             behavior: "smooth",
           });
         });
       });
-      
-      
+
       // stage 스크롤 다운
       if (document.querySelector("#stage")) {
         const stageImg = document.querySelector(".stage_img");
         const spotlightText = document.querySelector(".spotlight_text");
         const portfolio = document.querySelector(".portfolio_wrap");
         const name = document.querySelector(".name_wrap");
-        
+
         const images = [
           "assets/img/main_2.png",
           "assets/img/main_3.png",
@@ -391,14 +400,14 @@
           "assets/img/main_5.png",
           "assets/img/main_6.png",
         ];
-        
+
         window.addEventListener("scroll", () => {
           const scrollY = window.scrollY;
           const mainStage = document.querySelector(".main_stage");
           const mainStage2 = document.querySelector(".main_stage2");
-          
+
           /* main_stage */
-          
+
           if (scrollY > 100) {
             mainStage.classList.add("hide");
             mainStage2.classList.add("hide");
@@ -406,33 +415,33 @@
             mainStage.classList.remove("hide");
             mainStage2.classList.remove("hide");
           }
-          
+
           const header = document.querySelector("#header");
-          
+
           /* header */
-          
+
           if (scrollY > 2600) {
             header.classList.add("show");
           } else {
             header.classList.remove("show");
           }
-          
+
           let index = Math.floor(scrollY / 300);
-          
+
           if (index >= images.length) {
             index = images.length - 1;
           }
-          
+
           stageImg.src = images[index];
-          
+
           /* text */
-          
+
           if (scrollY > 1278 && scrollY < 2500) {
             spotlightText.classList.add("show");
           } else {
             spotlightText.classList.remove("show");
           }
-          
+
           if (scrollY > 1350 && scrollY < 2500) {
             portfolio.classList.add("active");
             name.classList.add("active");
@@ -446,7 +455,7 @@
       if (document.querySelector(".scroll-down")) {
         window.addEventListener("scroll", () => {
           const scrollDown = document.querySelector(".scroll-down");
-          
+
           if (window.scrollY > window.innerHeight * 0.9) {
             scrollDown.style.opacity = "0";
           } else {
@@ -458,88 +467,88 @@
       const content = document.querySelector(".icon-cards__content");
       const next = document.querySelector(".next");
       const prev = document.querySelector(".prev");
-      
+
       let angle = 0;
-      
+
       function rotateCarousel() {
         content.style.transform = `translate(-50%, -50%) rotateY(${angle}deg)`;
       }
-      
+
       /* 다음 */
-      
+
       next.addEventListener("click", () => {
         angle -= 72;
         rotateCarousel();
       });
-      
+
       /* 이전 */
-      
+
       prev.addEventListener("click", () => {
         angle += 72;
         rotateCarousel();
       });
-      
+
       /* 자동 회전 */
-      
+
       setInterval(() => {
         angle -= 72;
         rotateCarousel();
       }, 5000);
-      
+
       gsap.registerPlugin(ScrollTrigger);
-      
+
       // about_m
       const slides = document.querySelectorAll(".swiper-slide-m");
       const nextBtn = document.querySelector(".m-next");
       const prevBtn = document.querySelector(".m-prev");
-      
+
       let current = 0;
-      
+
       /* 첫 카드 */
-      
+
       slides[current].classList.add("active");
-      
+
       /* 보여주기 */
-      
+
       function showSlide(index) {
         slides.forEach((slide) => {
           slide.classList.remove("active");
         });
-        
+
         slides[index].classList.add("active");
       }
-      
+
       /* 다음 */
-      
+
       function nextSlide() {
         current++;
-        
+
         if (current >= slides.length) {
           current = 0;
         }
-        
+
         showSlide(current);
       }
-      
+
       /* 이전 */
-      
+
       function prevSlide() {
         current--;
-        
+
         if (current < 0) {
           current = slides.length - 1;
         }
-        
+
         showSlide(current);
       }
-      
+
       /* 버튼 */
-      
+
       nextBtn.addEventListener("click", nextSlide);
       prevBtn.addEventListener("click", prevSlide);
-      
+
       /* 자동 슬라이드 */
-      
+
       setInterval(() => {
         nextSlide();
       }, 5000);
@@ -549,27 +558,27 @@
           trigger: "#profile",
           start: "top 70%",
         },
-        
+
         y: 100,
         opacity: 0,
-        
+
         duration: 1.2,
         ease: "power3.out",
       });
-      
+
       /* 아래 내용 */
       gsap.from(".profile_inner ul", {
         scrollTrigger: {
           trigger: "#profile",
           start: "top 65%",
         },
-        
+
         y: 100,
         opacity: 0,
-        
+
         duration: 1.2,
         delay: 0.4,
-        
+
         ease: "power3.out",
       });
       gsap.from(".works_inner ul li", {
@@ -577,20 +586,20 @@
           trigger: "#works",
           start: "top 70%",
         },
-        
+
         y: 120,
         opacity: 0,
-        
+
         duration: 1.2,
-        
+
         stagger: 0.2,
-        
+
         ease: "power3.out",
       });
       // contact
       const box1 = document.querySelector("#contact .contact_dot1");
       const box2 = document.querySelector("#contact .contact_dot2");
-      
+
       gsap.fromTo(
         box1,
         {
@@ -602,9 +611,9 @@
           xPercent: 100,
           scale: 1,
           opacity: 1,
-          
+
           ease: "none",
-          
+
           scrollTrigger: {
             trigger: "#contact",
             start: "top 70%",
@@ -613,7 +622,7 @@
           },
         },
       );
-      
+
       gsap.fromTo(
         box2,
         {
@@ -625,9 +634,9 @@
           xPercent: -100,
           scale: 1,
           opacity: 1,
-          
+
           ease: "none",
-          
+
           scrollTrigger: {
             trigger: "#contact",
             start: "top 70%",
@@ -646,7 +655,7 @@
           topBtn.style.display = "none";
         }
       });
-      
+
       // 클릭 시 맨 위로 이동 (부드럽게)
       topBtn.onclick = function () {
         window.scrollTo({
@@ -654,7 +663,25 @@
           behavior: "smooth",
         });
       };
-      </script>
+
+      const params = new URLSearchParams(window.location.search);
+      const version = params.get("v") || "ent";
+
+      const aboutData = {
+        ent: `
+    무대 위 빛나는 순간들을 바라보며, 이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
+    기존 마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게
+    오래 기억될 무대를 만들고싶습니다.
+  `,
+
+        kids: `
+    아이들과 함께하는 시간을 좋아하며 자라온 저는, 이제는 아이들의 즐거운 순간을 직접 만들어내는 사람이 되고자 합니다.
+    아이들을 가까이에서 경험하며 쌓은 이해와 기존 마케팅 실무 경험을 바탕으로 아이와 부모의 마음을 생각하고, 더 많은 사람들에게
+    오래 기억될 콘텐츠와 브랜드 경험을 만들고싶습니다.
+  `,
+      };
+
+      document.querySelector(".about_desc").textContent = aboutData[version];
+    </script>
   </body>
-  </html>
-  
+</html>
