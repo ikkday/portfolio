@@ -684,6 +684,12 @@
       const params = new URLSearchParams(window.location.search);
       const version = params.get("v") || "ent";
 
+      const logoLink = document.querySelector(".logo a");
+
+      if (version === "kids") {
+        logoLink.href = "../../index.html?v=kids";
+      }
+
       const aboutData = {
         ent: `
     무대 위 빛나는 순간들을 바라보며, 이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
