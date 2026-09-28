@@ -476,6 +476,12 @@
   }
 }
 @media (max-width: 830px) {
+  #artwork,
+  #event_page,
+  #banner,
+  #poster {
+    background: none;
+  }
   #artwork .container,
   #event_page .container,
   #banner .container,
@@ -484,8 +490,44 @@
     align-items: center;
   }
   #banner .container {
+    margin-top: 23%;
+  }
+  .custom_prev,
+  .custom_next {
+    top: 58%;
+  }
+  #event_page .container {
+    margin-top: 40%;
+  }
+  #poster {
+    padding-top: 50%;
+  }
+  #artwork {
+    padding-top: 70px;
+  }
+  #artwork .work2_right {
+    display: flex;
+    justify-content: center;
+  }
+  #banner .container {
     gap: 0;
     /* position: inherit; */
+  }
+  .mySwiper2 .swiper-slide {
+    width: 96%;
+    height: 200px;
+  }
+  #artwork .container .work2_left,
+  #artwork .container .work2_right,
+  #event_page .container .work2_left,
+  #event_page .container .work2_right,
+  #banner .container .work2_left,
+  #banner .container .work2_right,
+  #poster .container .work2_left,
+  #poster .container .work2_right,
+  #banner .container .work2_left,
+  #banner .container .work2_right {
+    width: 100%;
   }
   .coverflow_wrap {
     width: 80%;
@@ -502,16 +544,14 @@
   }
   .work2_right img:nth-child(1) {
     margin-left: none;
-    width: 70%;
+    width: 30%;
   }
   .artwork2_img {
-    width: 80%;
-    top: 6%;
+    width: 34%;
+    top: 12%;
+    right: 5%;
   }
-  .custom_prev,
-  .custom_next {
-    top: 65%;
-  }
+
   .custom_prev {
     left: 0%;
   }
@@ -603,16 +643,27 @@
 
 /* sub4 */
 @media (max-width: 830px) {
+  #commercial {
+    padding-top: 150px;
+    margin-bottom: 10%;
+  }
+  #F_TeamProject,
+  #opening {
+    margin-bottom: 10%;
+  }
   #commercial .container,
   #F_TeamProject .container,
   #opening .container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   #commercial .work2_right,
   #opening .work2_right,
-  #F_TeamProject .work2_right {
+  #F_TeamProject .work2_right,
+  #commercial .work2_left,
+  #opening .work2_left,
+  #F_TeamProject .work2_left {
     width: 100%;
   }
 }
