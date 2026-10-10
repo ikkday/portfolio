@@ -1132,7 +1132,8 @@ body {
 #coreWork4,
 #coreWork5,
 #coreWork6,
-#coreWork7 {
+#coreWork7,
+#coreWork8 {
   padding-top: 25px;
 }
 .sub_about_inner {
@@ -1185,7 +1186,8 @@ img.omadeng_img {
 #coreWork4 .container,
 #coreWork5 .container,
 #coreWork6 .container,
-#coreWork7 .container {
+#coreWork7 .container,
+#coreWork8 .container {
   display: flex;
   justify-content: space-around;
   color: #fff;
@@ -1393,7 +1395,13 @@ img.omadeng_img {
 #coreWork7 .right_desc h4:nth-child(2) {
   width: 50%;
 }
-
+#coreWork8 .work_right .work_img img {
+  width: 80%;
+}
+#coreWork8 .work_right .right_desc h4 {
+  width: 100%;
+  padding-top: 5%;
+}
 /* sub2 */
 #artwork {
   width: 100%;
