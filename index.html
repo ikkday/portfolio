@@ -696,7 +696,9 @@
   `,
       };
 
-      document.querySelector(".about_desc").textContent = aboutData[version];
+      document.querySelectorAll(".about_desc").forEach((element) => {
+        element.textContent = aboutData[version] || aboutData.ent;
+      });
     </script>
   </body>
 </html>
